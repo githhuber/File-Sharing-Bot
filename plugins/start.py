@@ -95,7 +95,7 @@ async def start_command(client: Client, message: Message):
         k = await client.send_message(
             chat_id=message.from_user.id,  # The chat ID where the message will be sent
             text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Start Downloading the Videos and Join in Main Channel for Accessing Older videos 🍒",
-            quote=True,
+            parse_mode = ParseMode.HTML,
             reply_markup=reply_markup
         )
 
