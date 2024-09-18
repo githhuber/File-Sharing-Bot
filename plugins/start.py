@@ -88,8 +88,17 @@ async def start_command(client: Client, message: Message):
             except:
                 pass
 
-
-        k = await client.send_message(chat_id = message.from_user.id, text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Start Downloading the Videos and Join in Main Channel for Accessing Older videos 🍒" )
+        keyboard = [
+            [InlineKeyboardButton("Main Channel For More🔞", url="https://t.me/+eXdhmtqRNiQ0Y2Rh")],
+            ]
+        ]
+        reply_markup = InlineKeyboardMarkup(keyboard)
+        k = await client.send_message(
+            chat_id=message.from_user.id,  # The chat ID where the message will be sent
+            text=f"<b>❗️ <u>IMPORTANT</u> ❗️</b>\n\nThis Video / File Will Be Deleted In {file_auto_delete} (Due To Copyright Issues).\n\n📌 Start Downloading the Videos and Join in Main Channel for Accessing Older videos 🍒",
+            parse_mode='HTML',
+            reply_markup=reply_markup
+        )
 
         # Schedule the file deletion
         asyncio.create_task(delete_files(madflix_msgs, client, k))
