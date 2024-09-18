@@ -89,8 +89,7 @@ async def start_command(client: Client, message: Message):
                 pass
 
         keyboard = [
-            [InlineKeyboardButton("Main Channel For More🔞", url="https://t.me/+eXdhmtqRNiQ0Y2Rh")],
-            ]
+            [InlineKeyboardButton("Main Channel For More🔞", url="https://t.me/+eXdhmtqRNiQ0Y2Rh")]
         ]
         reply_markup = InlineKeyboardMarkup(keyboard)
         k = await client.send_message(
